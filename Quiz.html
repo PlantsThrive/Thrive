@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Green Companion</title>
+
+  <style>
+    @font-face {
+      font-family: 'Perfect Time';
+      src: url('perfect_time.ttf') format('truetype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: url('Smaller BG.png') center center / cover no-repeat;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 120px;
+    }
+
+    .learn-more {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      font-family: inherit;
+      width: 10rem;
+      margin-top: 1rem;
+    }
+
+    .learn-more .circle {
+      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      background: #319d61;
+      border-radius: 1rem;
+      position: relative;
+    }
+
+    .learn-more .icon.arrow {
+      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      left: 0.8rem;
+      width: 1.5rem;
+      height: 0.15rem;
+      background: none;
+    }
+
+    .learn-more .icon.arrow::before {
+      content: '';
+      position: absolute;
+      top: -0.35rem;
+      right: 0.0625rem;
+      width: 0.75rem;
+      height: 0.625rem;
+      border-top: 0.15rem solid #fff;
+      border-right: 0.15rem solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .learn-more .button-text {
+      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.5rem 0;
+      margin-left: 2rem;
+      color: black;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .learn-more:hover .circle {
+      width: 100%;
+    }
+
+    .learn-more:hover .icon.arrow {
+      background: #fff;
+      transform: translate(1rem, 0);
+    }
+
+    .learn-more:hover .button-text {
+      color: white;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .left-content {
+      flex: 1 1 300px;
+    }
+
+    .right-image {
+      flex: 1 1 300px;
+      text-align: right;
+    }
+
+    .right-image img {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-family: 'Perfect Time', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    hr {
+      border: 1px dashed #ccc;
+      margin: 2rem 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .question {
+      margin-bottom: 1rem;
+    }
+
+    .question-text {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .choices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .choice-button {
+      padding: 0.5rem 1rem;
+      border: 1px solid #319d61;
+      border-radius: 0.5rem;
+      background-color: #f9f9f9;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .choice-button:hover {
+      background-color: #319d61;
+      color: white;
+    }
+
+    .choice-button.selected {
+      background-color: #319d61;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="top-bar">
+      <img src="Logo without bg.png" class="logo" alt="Logo">
+      <button class="learn-more" onclick="window.location.href='home.html'">
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Go Back</span>
+      </button>
+    </div>
+
+    <div class="header">
+      <div class="left-content">
+        <h1  style=" font-size: 60px;">Find Your Green </br> Companion</h1>
+        <p>Find the plant that fits your life!<br>Answer 4 quick questions and meet your Thrive match.</p>
+      </div>
+      <div class="right-image">
+        <img src="Family Photo.png" alt="Plant Family">
+      </div>
+    </div>
+
+    <hr>
+
+    <form id="quizForm">
+
+      <div class="question">
+        <div class="question-text">Q1: What is your light situation like at home or work?</div>
+        <div class="choices" id="light">
+          <button type="button" class="choice-button" data-value="bright">Bright, natural sunlight</button>
+          <button type="button" class="choice-button" data-value="medium">Medium indirect light</button>
+          <button type="button" class="choice-button" data-value="low">Low light</button>
+          <button type="button" class="choice-button" data-value="artificial">Mostly artificial light</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-text">Q2: Do you have pets that might nibble on your plants?</div>
+        <div class="choices" id="pets">
+          <button type="button" class="choice-button" data-value="yes">Yes</button>
+          <button type="button" class="choice-button" data-value="no">No</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-text">Q3: How often can you commit to watering your plant?</div>
+        <div class="choices" id="watering">
+          <button type="button" class="choice-button" data-value="few_days">Every few days</button>
+          <button type="button" class="choice-button" data-value="week">About once a week</button>
+          <button type="button" class="choice-button" data-value="forget">I often forget</button>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-text">Q4: How would you describe your daily routine?</div>
+        <div class="choices" id="routine">
+          <button type="button" class="choice-button" data-value="home">Mostly at home</button>
+          <button type="button" class="choice-button" data-value="medium">In and out</button>
+          <button type="button" class="choice-button" data-value="rarely">Always on the go</button>
+        </div>
+      </div>
+
+      <button type="submit" class="learn-more" style="margin-top: 2rem;">
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Submit</span>
+      </button>
+
+    </form>
+
+  </div>
+
+<script>
+  const form = document.getElementById('quizForm');
+  let selections = {};
+
+  document.querySelectorAll('.choices').forEach(group => {
+    group.addEventListener('click', (e) => {
+      if (e.target.classList.contains('choice-button')) {
+        const buttons = group.querySelectorAll('.choice-button');
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        e.target.classList.add('selected');
+        selections[group.id] = e.target.getAttribute('data-value');
+      }
+    });
+  });
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const { light, pets, watering, routine } = selections;
+
+  if (!light || !pets || !watering || !routine) {
+    alert('Please answer all questions!');
+    return;
+  }
+
+  let result = null;
+
+  if (light === 'bright') {
+    if (pets === 'yes') {
+      if (watering === 'forget') {
+        result = 'Spineless Cactus';
+      } else {
+        result = 'Spider Plant';
+      }
+    } else {
+      result = 'Spiny Cactus';
+    }
+  } else if (light === 'medium') {
+    if (pets === 'yes') {
+      if (watering === 'forget') {
+        result = 'Peace Lily';
+      } else {
+        result = 'Spider Plant';
+      }
+    } else {
+      if (watering === 'few_days') {
+        result = 'Bamboo';
+      } else {
+        result = 'Pothos';
+      }
+    }
+  } else if (light === 'low') {
+    if (pets === 'yes') {
+      if (watering === 'few_days') {
+        result = 'Bamboo';
+      } else if (watering === 'week') {
+        result = 'Spider Plant';
+      } else {
+        result = 'Peace Lily';
+      }
+    } else {
+      if (watering === 'few_days') {
+        result = 'Bamboo';
+      } else {
+        result = 'Pothos';
+      }
+    }
+  } else if (light === 'artificial') {
+    result = 'Peace Lily';
+  }
+
+  // Redirect to result page
+  if (result) {
+    const pageName = result.replace(/\s+/g, '%20') + '.html';
+    window.location.href = pageName;
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
+
+</script>
+
+
+</body>
+</html>

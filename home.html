@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Desk</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      color: #fff;
+    }
+
+    .first-page {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+ .logo {
+  width: 250px; /* Reduced from 1180px */
+  height: auto;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row; /* changed from column to row */
+  gap: 15px; /* smaller gap */
+  align-items: center;
+}
+
+.learn-more {
+  width: 10rem; /* smaller button width */
+}
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .learn-more {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      font-family: inherit;
+      width: 18rem;
+    }
+
+    .learn-more .circle {
+      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      display: block;
+      width: 4.5rem;
+      height: 4.5rem;
+      background: #319d61;
+      border-radius: 1rem;
+      position: relative;
+    }
+
+    .learn-more .icon.arrow {
+      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      left: 1.2rem;
+      width: 1.7rem;
+      height: 0.15rem;
+      background: none;
+    }
+
+    .learn-more .icon.arrow::before {
+      content: '';
+      position: absolute;
+      top: -0.35rem;
+      right: 0.0625rem;
+      width: 0.75rem;
+      height: 0.625rem;
+      border-top: 0.15rem solid #fff;
+      border-right: 0.15rem solid #fff;
+      transform: rotate(45deg);
+    }
+
+    .learn-more .button-text {
+      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem 0;
+      margin-left: 3rem;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .learn-more:hover .circle {
+      width: 100%;
+    }
+
+    .learn-more:hover .icon.arrow {
+      background: #fff;
+      transform: translate(1rem, 0);
+    }
+
+    .learn-more:hover .button-text {
+      color: #fff;
+    }
+
+    .main-content {
+      display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  flex-direction: row; /* ensures side-by-side on large screens */
+    }
+
+    .gif {
+      width: 550px;
+      height: auto;
+      border-radius: 20px;
+    }
+.gif2 {
+      width: 530px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .text-box {
+      background-color: white;
+      color: #319d61;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 50px;
+      border-radius: 20px;
+      max-width: 380px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .text-box .learn-more {
+      margin-top: 10px;
+    }
+
+    .marquee-container {
+      background-color: #319d61;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px 0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 0 20px 20px 20px;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .second-page {
+      min-height: 100vh;
+      background-color: black;
+      color: #319d61;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px;
+      flex-wrap: wrap;
+    }
+
+    .left-content {
+      max-width: 50%;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .right-content {
+      max-width: 40%;
+    }
+
+    .qr-image {
+      width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .second-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      .left-content,
+      .right-content {
+        max-width: 100%;
+      }
+
+      .logo {
+        width: 200px;
+      }
+
+      .text-box {
+        font-size: 1.5rem;
+        padding: 30px;
+      }
+
+      .button-group {
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+	@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* stack on smaller screens */
+  }
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="first-page">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <img src="Logo.png" alt="Logo" class="logo" />
+      <div class="button-group">
+         <a href="Home.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Home</span>
+          </button>
+        </a>
+      <a href="Social.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Social</span>
+          </button>
+        </a>
+      <a href="Manual.html">
+          <button class="learn-more" >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Manual</span>
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <img src="Gif 1.gif" alt="Animated Gif" class="gif" />
+      <div class="text-box">
+        <div>Find out who can be your ideal green companion!</div>
+        <button class="learn-more" style="margin-top: 50px;">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+		          <a href="Quiz.html">
+          <span class="button-text">Take Quiz</span>
+		  </a>
+        </button>
+      </div>
+	        <img src="Gif 2.gif" alt="Animated Gif" class="gif2" />
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee-container">
+      <div class="marquee-text">
+        &nbsp;&nbsp;&nbsp;&nbsp;Your desk just got greener&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Your desk just got greener&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Your desk just got greener&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Your desk just got greener&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Your desk just got greener
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Page -->
+  <div class="second-page">
+    <div class="left-content">
+      <p>Already got a plant in your hive? Scan your packaging to unlock personalized care tips.<br><br>or if you prefer...</p>
+        <button class="learn-more" style="margin-top: 50px;">
+        <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+        </span>
+	<a href="Manual.html">
+        <span class="button-text" style="margin-left: 60px;" >Access Manual</span>
+		        </a>
+
+      </button>
+    </div>
+    <div class="right-content">
+      <img src="QR code.png" alt="QR Code" class="qr-image" />
+    </div>
+  </div>
+
+</body>
+</html>

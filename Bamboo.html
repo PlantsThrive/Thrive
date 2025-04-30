@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/perfect-time" rel="stylesheet">
+  <style>
+    :root {
+      --white: #ffffff;
+      --black: #000000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Mukta', sans-serif;
+      background-image: url('Smaller BG.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      width: 80%;
+      max-width: 1000px;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      height: 80px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .learn-more {
+      width: 10rem;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+      font-size: 1rem;
+      font-family: 'Mukta', sans-serif;
+      text-align: left;
+    }
+
+    .learn-more .circle {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #319d61;
+      border-radius: 1.625rem;
+      position: relative;
+    }
+
+    .learn-more .icon.arrow {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0.6rem;
+      margin: auto;
+      width: 1rem;
+      height: 0.125rem;
+      background: none;
+    }
+
+    .learn-more .icon.arrow::before {
+      content: '';
+      position: absolute;
+      top: -0.25rem;
+      right: 0.0625rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-top: 0.125rem solid var(--white);
+      border-right: 0.125rem solid var(--white);
+      transform: rotate(45deg);
+    }
+
+    .learn-more .button-text {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+      position: absolute;
+      top: 50%;
+      left: 3.2rem;
+      transform: translateY(-50%);
+      font-weight: 700;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    .learn-more:hover .circle {
+      width: 100%;
+    }
+
+    .learn-more:hover .icon.arrow {
+      background: var(--white);
+      transform: translate(1rem, 0);
+    }
+
+    .learn-more:hover .button-text {
+      color: var(--white);
+    }
+
+    .result-section {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .result-section img {
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+
+    .result-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .plant-name {
+      font-family: 'Perfect Time', sans-serif;
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .plant-type {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #319d61;
+    }
+
+    .description {
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .divider {
+      width: 100%;
+      border-top: 3px dashed #319d61;
+      margin: 2rem 0;
+    }
+
+    .more-info {
+      text-align: center;
+    }
+
+    .more-info p {
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .or-text {
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="Logo without bg.png" alt="Logo" class="logo">
+      <nav>
+        <a href="Home.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Home</span>
+          </button>
+        </a>
+        <a href="Social.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Social</span>
+          </button>
+        </a>
+        <a href="Manual.html">
+          <button class="learn-more" >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Manual</span>
+          </button>
+        </a>
+      </nav>
+    </div>
+
+    <div class="result-section">
+      <div class="result-title">You Matched With:</div>
+      <img src="Niko.png" alt="Niko Plant">
+      <div class="plant-name">The Balanced Niko</div>
+      <div class="plant-type">Lucky Bamboo</div>
+      <div class="description">
+        Peaceful and adaptable, Niko brings calm to any corner.<br>
+        <strong>Care:</strong> Indirect light, change water every 1–2 weeks. 
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="more-info">
+      <p>For more information:</p>
+      <a href="Manual.html">
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Go to Manual</span>
+        </button>
+      </a>
+      <div class="or-text">Or</div>
+      <a href="Quiz.html">
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Retake Quiz</span>
+        </button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

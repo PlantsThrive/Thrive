@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meet The Hive</title>
+  <link href="https://fonts.googleapis.com/css?family=Mukta:700" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000;
+      --white: #fff;
+      --black: #282936;
+      --green: #319d61;
+      --water: #2f98cf;
+      --sun: #ffd35a;
+      --soil: #b17553;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Mukta', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--black);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .learn-more {
+      width: 8rem;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      border: 0;
+      background: transparent;
+      font-size: 1rem;
+      font-family: 'Mukta', sans-serif;
+    }
+
+    .learn-more .circle {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #319d61;
+      border-radius: 1.625rem;
+      position: relative;
+    }
+
+    .learn-more .icon.arrow {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0.5rem;
+      margin: auto;
+      width: 1rem;
+      height: 0.125rem;
+      background: none;
+    }
+
+    .learn-more .icon.arrow::before {
+      content: '';
+      position: absolute;
+      top: -0.25rem;
+      right: 0.0625rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-top: 0.125rem solid var(--white);
+      border-right: 0.125rem solid var(--white);
+      transform: rotate(45deg);
+    }
+
+    .learn-more .button-text {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.5rem 0;
+      margin-left: 2rem;
+      color: var(--white);
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .learn-more:hover .circle {
+      width: 100%;
+    }
+
+    .learn-more:hover .icon.arrow {
+      background: var(--white);
+      transform: translate(1rem, 0);
+    }
+
+    .learn-more:hover .button-text {
+      color: var(--white);
+    }
+
+    .content-box {
+      background: var(--white);
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .intro-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .intro-text {
+      flex: 1;
+    }
+
+    .intro-gif {
+      flex: 1;
+      text-align: right;
+    }
+
+    .intro-gif img {
+      max-width: 100%;
+      max-height: 200px;
+    }
+
+    .content-box h1 {
+      color: var(--green);
+      margin-top: 0;
+    }
+
+    .accordion {
+      margin-top: 2rem;
+    }
+
+    details {
+      margin-bottom: 1rem;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      padding: 1rem;
+      position: relative;
+    }
+
+    details[open] .accordion-gif {
+      display: block;
+    }
+
+    .accordion-gif {
+      display: none;
+      text-align: right;
+      margin-top: 1rem;
+    }
+
+    .accordion-gif img {
+      max-width: 150px;
+    }
+
+    .water {
+      background-color: var(--water);
+    }
+
+    .sun {
+      background-color: var(--sun);
+    }
+
+    .soil {
+      background-color: var(--soil);
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .slideshow-box {
+      background: var(--white);
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .slideshow-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .slide-text {
+      flex: 1;
+      color: var(--green);
+    }
+
+    .slide-image {
+      flex: 1;
+    }
+
+    .slide-image img {
+      max-width: 100%;
+      max-height: 250px;
+    }
+
+    .slide-controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .slide-controls button {
+      background-color: var(--green);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .slide-counter {
+      color: var(--green);
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo.png" alt="Logo">
+    <nav>
+       <a href="Home.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Home</span>
+          </button>
+        </a>
+      <a href="Social.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Social</span>
+          </button>
+        </a>
+      <a href="Manual.html">
+          <button class="learn-more" >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Manual</span>
+          </button>
+        </a>
+    </nav>
+  </header>
+
+  <div class="content-box">
+    <div class="intro-section">
+      <div class="intro-text">
+        <h1>Meet The Hive</h1>
+        <p style="color:black; font-weight:bold;">
+          The Hive Collection features five easygoing, office-friendly plants matched to you through a quick 
+          <a href="#" style="color:#319d61; font-weight:bold;">personality quiz</a>. Each one is here to brighten your hive and help you grow—just what every busy bee needs.
+        </p>
+        <p style="color:black; font-weight:bold;">
+          Caring for your plant is simple. Start with the basics below.
+        </p>
+      </div>
+      <div class="intro-gif">
+        <img src="your-gif-here.gif" alt="Hive GIF">
+      </div>
+    </div>
+
+    <div class="accordion">
+      <details class="water">
+        <summary>Water</summary>
+        <p>Water when the top of the soil feels dry. Keep it lightly moist—not soaked.</p>
+        <p>Note: Cactus prefers watering every 2–3 weeks. Pothos may need water more often, depending on light and soil.</p>
+        <div class="accordion-gif">
+          <img src="water-gif.gif" alt="Water GIF">
+        </div>
+      </details>
+
+      <details class="sun">
+        <summary>Sun</summary>
+        <p>Most Hive plants love bright, indirect light. Pothos can tolerate lower light, while cactus enjoys more direct sun.</p>
+        <div class="accordion-gif">
+          <img src="sun-gif.gif" alt="Sun GIF">
+        </div>
+      </details>
+
+      <details class="soil">
+        <summary>Soil</summary>
+        <p>Each plant is already potted in well-draining soil. No need to repot—just make sure it doesn’t stay soggy. Coleus and pothos like soil that holds gentle moisture, while cactus prefers it dry between waterings.</p>
+        <div class="accordion-gif">
+          <img src="soil-gif.gif" alt="Soil GIF">
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="slideshow-box">
+    <h2 style="color: var(--green); margin-top: 0;">Plant Care Basics</h2>
+    <div class="slideshow-container">
+      <div class="slide-text" id="slide-description">Description for slide 1</div>
+      <div class="slide-image">
+        <img id="slide-image" src="Slide 1.png" alt="Slide Image">
+      </div>
+    </div>
+    <div class="slide-controls">
+      <button onclick="prevSlide()">←</button>
+      <button onclick="nextSlide()">→</button>
+    </div>
+    <div class="slide-counter" id="slide-counter">1 of 7</div>
+  </div>
+
+ <script>
+  const slides = [
+    {
+      desc: "How to Check if Soil is Dry<br><br>Press your finger 2–3 cm into the soil.<br><br>Dry? Time to water.<br><br>Still moist? Wait a few more days.<br><br>Dry soil feels light and crumbly. Moist soil feels cool and dark.",
+      img: "Slide 1.png"
+    },
+    {
+      desc: "Pour water slowly into the soil, not on the leaves. <br><br>Water until the soil is lightly moist—not soaked.<br><br> Too much water can harm your plant more than too little. ",
+      img: "Slide 2.png"
+    },
+    {
+      desc: "Light Basics <br><br>Most plants prefer bright, indirect light. <br><br>Place them near a sunny window, but not in direct sun. <br><br>Direct light can scorch leaves—filtered light is best! ",
+      img: "Slide 3.png"
+    },
+    {
+      desc: "Clean the Leaves <br><br>Wipe large leaves gently with a soft cloth. <br><br>Dust can block sunlight and slow growth. <br><br>Clean leaves help your plant breathe and shine! ",
+      img: "Slide 4.png"
+    },
+    {
+      desc: "Rotate the Pot <br><br>Plants lean toward the light over time. <br><br>Turn the pot a little each week so it grows evenly. <br><br>This helps your plant stay upright and balanced. ",
+      img: "Slide 5.png"
+    },
+    {
+      desc: "Room Temperature <br><br>Keep your plant in a room between 18–27°C. <br><br>Avoid placing it near AC vents, heaters, or open windows. <br><br>Sudden changes in temperature can stress your plant ",
+      img: "Slide 6.png"
+    },
+    {
+      desc: "Cut Yellow Leaves <br><br>Use clean scissors to cut the yellow leaf where its little stem meets the main vine. <br><br>This helps your plant stay healthy and fresh. ",
+      img: "Slide 7.png"
+    }
+  ];
+
+  let currentSlide = 0;
+
+  function updateSlide() {
+document.getElementById('slide-description').innerHTML = slides[currentSlide].desc;
+    document.getElementById('slide-image').src = slides[currentSlide].img;
+    document.getElementById('slide-counter').textContent = `${currentSlide + 1} of ${slides.length}`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide();
+  }
+
+  // Initial render
+  updateSlide();
+</script>
+
+
+</body>
+</html>
