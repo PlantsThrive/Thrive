@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Find Your Green Companion</title>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your Green Companion</title>
+
   <style>
     @font-face {
       font-family: 'Perfect Time';
@@ -41,7 +48,7 @@
     }
 
     .logo {
-      width: 120px;
+      width: 100px;
     }
 
     .learn-more {
@@ -136,6 +143,7 @@
     .right-image {
       flex: 1 1 300px;
       text-align: right;
+      margin-top: 1rem;
     }
 
     .right-image img {
@@ -190,14 +198,47 @@
       transition: 0.3s;
     }
 
-    .choice-button:hover {
+    .choice-button:hover,
+    .choice-button.selected {
       background-color: #319d61;
       color: white;
     }
 
-    .choice-button.selected {
-      background-color: #319d61;
-      color: white;
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .right-image {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .right-image img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      h1 {
+        font-size: 2.2rem !important;
+      }
+
+      .choice-button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .learn-more {
+        width: 100%;
+      }
+
+      .learn-more .button-text {
+        margin-left: 3rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -208,7 +249,7 @@
 
     <div class="top-bar">
       <img src="Logo without bg.png" class="logo" alt="Logo">
-      <button class="learn-more" onclick="window.location.href='home.html'">
+      <button class="learn-more" onclick="window.location.href='index.html'">
         <span class="circle" aria-hidden="true">
           <span class="icon arrow"></span>
         </span>
