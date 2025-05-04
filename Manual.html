@@ -43,7 +43,7 @@
     }
 
     .learn-more {
-      width: 8rem;
+      width: 15rem;
       position: relative;
       display: inline-block;
       cursor: pointer;
@@ -241,6 +241,34 @@
       font-weight: bold;
       margin-top: 0.5rem;
     }
+	
+	.cheat-sheet-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.download-btn {
+  background-color: transparent;
+  color: var(--green);
+  border: 2px solid var(--green);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+}
+
+.download-btn:hover {
+  background-color: var(--green);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
@@ -248,7 +276,7 @@
   <header>
     <img src="Logo.png" alt="Logo">
     <nav>
-       <a href="Home.html">
+       <a href="index.html">
           <button class="learn-more">
             <span class="circle" aria-hidden="true">
               <span class="icon arrow"></span>
@@ -288,7 +316,7 @@
         </p>
       </div>
       <div class="intro-gif">
-        <img src="your-gif-here.gif" alt="Hive GIF">
+        <img src="Family Photo.png" alt="Family Photo">
       </div>
     </div>
 
@@ -298,7 +326,6 @@
         <p>Water when the top of the soil feels dry. Keep it lightly moist—not soaked.</p>
         <p>Note: Cactus prefers watering every 2–3 weeks. Pothos may need water more often, depending on light and soil.</p>
         <div class="accordion-gif">
-          <img src="water-gif.gif" alt="Water GIF">
         </div>
       </details>
 
@@ -306,7 +333,6 @@
         <summary>Sun</summary>
         <p>Most Hive plants love bright, indirect light. Pothos can tolerate lower light, while cactus enjoys more direct sun.</p>
         <div class="accordion-gif">
-          <img src="sun-gif.gif" alt="Sun GIF">
         </div>
       </details>
 
@@ -314,10 +340,22 @@
         <summary>Soil</summary>
         <p>Each plant is already potted in well-draining soil. No need to repot—just make sure it doesn’t stay soggy. Coleus and pothos like soil that holds gentle moisture, while cactus prefers it dry between waterings.</p>
         <div class="accordion-gif">
-          <img src="soil-gif.gif" alt="Soil GIF">
         </div>
       </details>
     </div>
+	<h2 style="color: var(--green);">Download Care Cheat Sheets</h2>
+  <p style="color: black; font-weight: bold;">
+    Each of the Hive plants has its own easy-to-follow care guide. These downloadable PDF cheat sheets offer tailored watering, sunlight, and soil tips to help your plant thrive.
+  </p>
+  <div class="cheat-sheet-buttons">
+    <a href="Cora Cheat Sheet online version.pdf" download><button class="download-btn">Cora Cheat Sheet</button></a>
+    <a href="Ivy Cheat Sheet online version.pdf" download><button class="download-btn">Ivy Cheat Sheet</button></a>
+    <a href="Juno Cheat Sheet copy online version.pdf" download><button class="download-btn">Juno Cheat Sheet</button></a>
+    <a href="Lily Cheat Sheet online version.pdf" download><button class="download-btn">Lily Cheat Sheet</button></a>
+    <a href="Niko Cheat Sheet online version.pdf" download><button class="download-btn">Niko Cheat Sheet</button></a>
+  </div>
+	 
+  
   </div>
 
   <div class="slideshow-box">
