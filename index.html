@@ -50,40 +50,40 @@
       align-items: flex-start;
       flex-wrap: wrap;
     }
-
-    .learn-more {
+	
+  .learn-more {
+      width: 15rem;
       position: relative;
       display: inline-block;
       cursor: pointer;
-      border: none;
+      border: 0;
       background: transparent;
-      padding: 0;
-      font-size: inherit;
-      font-family: inherit;
-      width: 18rem;
+      font-size: 1rem;
+      font-family: 'Mukta', sans-serif;
     }
 
     .learn-more .circle {
-      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
       display: block;
-      width: 4.5rem;
-      height: 4.5rem;
-      background: #319d61;
-      border-radius: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #319d61;
+      border-radius: 1.625rem;
       position: relative;
     }
-
-    .learn-more .icon.arrow {
-      transition: all 0.45s cubic-bezier(0.65, 0, .076, 1);
+	
+   .learn-more .icon.arrow {
+      transition: all 0.45s cubic-bezier(0.65,0,.076,1);
       position: absolute;
       top: 0;
       bottom: 0;
+      left: 0.5rem;
       margin: auto;
-      left: 1.2rem;
-      width: 1.7rem;
-      height: 0.15rem;
+      width: 1rem;
+      height: 0.125rem;
       background: none;
     }
+
 
     .learn-more .icon.arrow::before {
       content: '';
@@ -104,28 +104,30 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 1rem 0;
-      margin-left: 3rem;
+      padding: 0.5rem 0;
+      margin-left: 2rem;
       color: #fff;
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1rem;
       line-height: 1.6;
       text-align: center;
       text-transform: uppercase;
+	        white-space: nowrap;
     }
 
-    .learn-more:hover .circle {
+   .learn-more:hover .circle {
       width: 100%;
     }
 
     .learn-more:hover .icon.arrow {
-      background: #fff;
+      background: var(--white);
       transform: translate(1rem, 0);
     }
 
     .learn-more:hover .button-text {
       color: #fff;
     }
+
 
     .main-content {
       display: flex;
@@ -140,13 +142,13 @@
 
     .gif {
       width: 550px;
-      height: auto;
+      height: 380px;
       border-radius: 20px;
     }
 
     .gif2 {
       width: 530px;
-      height: auto;
+      height: 380px;
       border-radius: 20px;
     }
 
@@ -159,7 +161,7 @@
       border-radius: 20px;
       max-width: 380px;
       width: 100%;
-      height: auto;
+      height: 380px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       text-align: left;
     }
@@ -222,12 +224,7 @@
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
 
-    /* Responsive Styling */
-    @media (max-width: 768px) {
-      .main-content {
-        flex-direction: column;
-        align-items: center;
-      }
+   
 
       .gif,
       .gif2 {
@@ -283,35 +280,39 @@
     <div class="top-bar">
       <img src="Logo.png" alt="Logo" class="logo" />
       <div class="button-group">
-        <button class="learn-more">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">About</span>
-        </button>
-
-        <button class="learn-more">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">Manual</span>
-        </button>
-
-        <button class="learn-more">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">Social</span>
-        </button>
+  <a href="index.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Home</span>
+          </button>
+        </a>
+      <a href="Social.html">
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Social</span>
+          </button>
+        </a>
+      <a href="Manual.html">
+          <button class="learn-more" >
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Manual</span>
+          </button>
+        </a>
       </div>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
-      <img src="Gif 1.gif" alt="Animated Gif" class="gif" />
+      <img src="Comp 1_1.gif" alt="Animated Gif" class="gif" />
       <div class="text-box">
         <div>Find out who can be your ideal green companion!</div>
-        <button class="learn-more" style="margin-top: 50px;">
+        <button class="learn-more" style="margin-top: 90px;">
           <span class="circle" aria-hidden="true">
             <span class="icon arrow"></span>
           </span>
@@ -320,7 +321,7 @@
           </a>
         </button>
       </div>
-      <img src="Gif 2.gif" alt="Animated Gif" class="gif2" />
+      <img src="Homepage Gif 2.gif" alt="Animated Gif" class="gif2" />
     </div>
 
     <!-- Marquee -->
